@@ -45,7 +45,8 @@ def verify(message, sig,public):
         return False
 
 if __name__=='__main__':
-    pr,pu=genrate_keys()
+    pr,pu=genrate_keys() #lets this is A
+    pr1,pu1=genrate_keys() # lets this is B
     # print(pr)
     # print(pu)
 
@@ -53,7 +54,7 @@ if __name__=='__main__':
     sig = sign(message,pr)
     # print(sig)
 
-    correct = verify(message,sig,pu)
+    correct = verify(message,sig,pu1) #while verifying the message or any other persons priate key it show false
     if correct:
         print("successfull")
     else:
